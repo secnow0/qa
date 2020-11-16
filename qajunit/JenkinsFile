@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+
+  stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/secnow0/selenium.git'
+                }
+         }
+
+            stage('Test') {
+            steps {
+                sh 'mvn clean test'
+                }
+         }
+    }
+
+}
